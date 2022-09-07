@@ -40,7 +40,7 @@ public class Empresa {
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public long getId() {
+    public Integer getId() {
         return idEmpresa;
     }
 
