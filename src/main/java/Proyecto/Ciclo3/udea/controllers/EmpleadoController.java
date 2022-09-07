@@ -1,6 +1,8 @@
 package Proyecto.Ciclo3.udea.controllers;
 
 import Proyecto.Ciclo3.udea.models.Empleado;
+import Proyecto.Ciclo3.udea.models.Empresa;
+import Proyecto.Ciclo3.udea.models.ObjetoRespuesta;
 import Proyecto.Ciclo3.udea.services.EmpleadoService;
 import Proyecto.Ciclo3.udea.services.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +28,13 @@ public class EmpleadoController {
 
     //BUSCAR EMPLEADO POR ID
     @GetMapping("/enterprise/{id}")
-    public ResponseEntity<Empleado> getEmpleadoId(@PathVariable Integer id) throws Exception{
+    public ResponseEntity<Object> getEmpleadoId(@PathVariable Integer id){
         try {
             Empleado e = servEmpleado.empleadoGetId(id);
             return new ResponseEntity<>(e, HttpStatus.OK);
         }catch (Exception e){
-            throw new Exception("El id del empleado no se encontro");
+            ObjetoRespuesta s = new ObjetoRespuesta();
+            return new ResponseEntity<>(s.getRespuestaEmpleado(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

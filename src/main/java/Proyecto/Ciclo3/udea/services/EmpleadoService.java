@@ -10,16 +10,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EmpleadoService {
+public class EmpleadoService implements EmpleadoInterface {
 
     @Autowired
     private EmpleadoRepository repoEmpleado;
 
-    @Autowired
+    @Override
     public List<Empleado> empleadoGetAll(){
         return repoEmpleado.findAll();
     }
-
+    @Override
     public Empleado empleadoGetId(Integer id) throws Exception{
 
         Optional<Empleado> s = repoEmpleado.findById(id);
