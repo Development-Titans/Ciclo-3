@@ -15,16 +15,17 @@ public class EmpleadoService implements EmpleadoInterface {
     @Autowired
     private EmpleadoRepository repoEmpleado;
 
-    //Ver Empleados
+
+    // VER EMPRESAS
     @Override
     public List<Empleado> empleadoGetAll(){
         return repoEmpleado.findAll();
     }
 
-    //Buscar y ver Empleado po Id
+
+    // BUSCAR POR ID
     @Override
     public Empleado empleadoGetId(Integer id) throws Exception{
-
         Optional<Empleado> s = repoEmpleado.findById(id);
         if (s.isPresent()){ /* Si hay datos en la variable entonces: */
             return s.get(); /* Devuelve lo que tiene dentro la variable para verla en controladores*/
@@ -33,7 +34,7 @@ public class EmpleadoService implements EmpleadoInterface {
 
     }
 
-    //Crear un Empleado
+    //CREAR EMPLEADO
     @Override
     public String addEmpleado(Empleado empleadoRegistro) throws Exception{
         try {/* Se valida que el id no exista*/
@@ -45,7 +46,7 @@ public class EmpleadoService implements EmpleadoInterface {
         throw new Exception("El empleado que intenta agregar ya existe");
     }
 
-    // Actualizar datos de un Empleado
+    // ACTUALIZAR EMPLEADO
     @Override
     public String updateEmpleado(Empleado emp, Integer id) throws Exception{ /* Recibimos los parametros del controlador */
         try {

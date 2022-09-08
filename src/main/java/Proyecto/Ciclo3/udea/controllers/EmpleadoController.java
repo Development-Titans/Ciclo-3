@@ -3,6 +3,7 @@ package Proyecto.Ciclo3.udea.controllers;
 import Proyecto.Ciclo3.udea.models.Empleado;
 import Proyecto.Ciclo3.udea.models.Empresa;
 import Proyecto.Ciclo3.udea.models.ObjetoRespuesta;
+import Proyecto.Ciclo3.udea.services.EmpleadoInterface;
 import Proyecto.Ciclo3.udea.services.EmpleadoService;
 import Proyecto.Ciclo3.udea.services.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,16 +17,24 @@ import java.util.List;
 public class EmpleadoController {
 
     @Autowired
-    private EmpleadoService servEmpleado;
+    private EmpleadoInterface servEmpleado;
 
     //MOSTRAR EMPLEADOS
+<<<<<<< HEAD
     @GetMapping("/user")
+=======
+    @GetMapping("/users")
+>>>>>>> 30ffc894e0eb26a144bef622ce9599a6337bd312
     public ResponseEntity<List<Empleado>> getEmpleado(){
         return new ResponseEntity<>(servEmpleado.empleadoGetAll(), HttpStatus.OK);
     }
 
     //BUSCAR EMPLEADO POR ID
+<<<<<<< HEAD
     @GetMapping("/user/{id}")
+=======
+    @GetMapping("/users/{id}")
+>>>>>>> 30ffc894e0eb26a144bef622ce9599a6337bd312
     public ResponseEntity<Object> getEmpleadoId(@PathVariable Integer id){
         try {
             Empleado e = servEmpleado.empleadoGetId(id);
@@ -37,7 +46,11 @@ public class EmpleadoController {
     }
 
     //CREAR DATOS
+<<<<<<< HEAD
     @PostMapping("/user/{id}")
+=======
+    @PostMapping("/users")
+>>>>>>> 30ffc894e0eb26a144bef622ce9599a6337bd312
     public ResponseEntity<String> crearDatos(@RequestBody Empleado empleadoRegistro){
         try {
             String men = servEmpleado.addEmpleado(empleadoRegistro);
@@ -49,7 +62,11 @@ public class EmpleadoController {
     }
 
     //ACTUALIZAR DATOS
+<<<<<<< HEAD
     @PostMapping("/user")
+=======
+    @PatchMapping("/users/{id}")
+>>>>>>> 30ffc894e0eb26a144bef622ce9599a6337bd312
     public ResponseEntity<String> actualizarDatos(@RequestBody Empleado empleadoRegistro, @PathVariable Integer id){
         try {
             servEmpleado.updateEmpleado(empleadoRegistro, id);

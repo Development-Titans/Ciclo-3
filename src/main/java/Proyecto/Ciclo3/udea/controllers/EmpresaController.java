@@ -41,8 +41,7 @@ public class EmpresaController {
     }
 
     // CREAR DATOS
-
-    @PostMapping("/enterprise")/* Para probarlo se copio los datos que mostro en el metodo get de la linea 28
+    /* Para probarlo se copio los datos que mostro en el metodo get de la linea 28
     con todas las llaves e informacion, de la siguiente forma:
     {
     "nombre": "Juan manuel",
@@ -71,6 +70,7 @@ public class EmpresaController {
 
     Las lineas 44, 45, 46, 47, 58, 59, y 60 son los datos nuevos para la tabla empresa, los demas datos no se cambian, esos
     ya vienen definidos por las otras clases, si se cambian generan error*/
+    @PostMapping("/enterprise")
     public ResponseEntity<String> crearDatos(@RequestBody Empresa empresa_parametro){
         try { /* Retorna un mensaje de exito o de error */
             String men = servEmpresa.addempresa(empresa_parametro); /* La variable men se crea aqui mismo y servEmpresa
