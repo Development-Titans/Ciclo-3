@@ -15,13 +15,15 @@ public class EmpleadoService implements EmpleadoInterface {
     @Autowired
     private EmpleadoRepository repoEmpleado;
 
+    // VER EMPRESAS
     @Override
     public List<Empleado> empleadoGetAll(){
         return repoEmpleado.findAll();
     }
+
+    // BUSCAR POR ID
     @Override
     public Empleado empleadoGetId(Integer id) throws Exception{
-
         Optional<Empleado> s = repoEmpleado.findById(id);
         if (s.isPresent()){ /* Si hay datos en la variable entonces: */
             return s.get(); /* Devuelve lo que tiene dentro la variable para verla en controladores*/

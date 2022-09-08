@@ -3,6 +3,7 @@ package Proyecto.Ciclo3.udea.controllers;
 import Proyecto.Ciclo3.udea.models.Empleado;
 import Proyecto.Ciclo3.udea.models.Empresa;
 import Proyecto.Ciclo3.udea.models.ObjetoRespuesta;
+import Proyecto.Ciclo3.udea.services.EmpleadoInterface;
 import Proyecto.Ciclo3.udea.services.EmpleadoService;
 import Proyecto.Ciclo3.udea.services.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +19,16 @@ import java.util.List;
 public class EmpleadoController {
 
     @Autowired
-    private EmpleadoService servEmpleado;
+    private EmpleadoInterface servEmpleado;
 
     //MOSTRAR EMPLEADOS
-    @GetMapping("/enterprise")
+    @GetMapping("/users")
     public ResponseEntity<List<Empleado>> getEmpleado(){
         return new ResponseEntity<>(servEmpleado.empleadoGetAll(), HttpStatus.OK);
     }
 
     //BUSCAR EMPLEADO POR ID
-    @GetMapping("/enterprise/{id}")
+    @GetMapping("/users/{id}")
     public ResponseEntity<Object> getEmpleadoId(@PathVariable Integer id){
         try {
             Empleado e = servEmpleado.empleadoGetId(id);
