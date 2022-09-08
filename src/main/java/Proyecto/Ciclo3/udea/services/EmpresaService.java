@@ -44,7 +44,28 @@ public class EmpresaService implements EmpresaInterface { // Se genera superclas
         throw new Exception("La empresa que intenta agregar ya existe");
     }
 
-
+    // ACTUALIZACION DE DATOS
+    @Override
+    public String actualizarEmpresa(Empresa emp, Integer id) throws Exception{ /* Recibimos los parametros del
+        controlador */
+        try {
+            Empresa g = empresaGetId(id); /* Se busca el id en el metodo de la linea 26, si encuentra el id
+            entonces guarda todos los datos de esa empresa en la variable g, en las siguientes lineas se modifican los
+            datos*/
+            g.setId(id); // Se modifica id
+            g.setNombre(emp.getNombre()); /* El emp viene del parametro y el getnombre es el metodo para mostrar o colocar
+            el nombre de la empresa que envia el usuario y se cambia el nombre al mismo tiempo */
+            g.setNit(emp.getNit());
+            g.setTelefono(emp.getTelefono());
+            g.setDireccion(emp.getDireccion());
+            g.setFechaActualizacion(emp.getFechaActualizacion());
+            g.setFechaCreacion(emp.getFechaCreacion());
+            repoEmpresa.save(g); // Finalmente se guarda lo que se modifico en la variable g y quedan actualizados los datos
+            return "Se actualizaron los datos con exito";
+        }catch (Exception e){
+            throw new Exception("El id que intenta actualizar no esta en la base de datos");
+        }
+    }
 }
 
 

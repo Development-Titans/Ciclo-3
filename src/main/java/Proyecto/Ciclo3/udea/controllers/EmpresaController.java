@@ -38,6 +38,8 @@ public class EmpresaController {
 
     }
 
+    // CREAR DATOS
+
     @PostMapping("/enterprise")/* Para probarlo se copio los datos que mostro en el metodo get de la linea 28
     con todas las llaves e informacion, de la siguiente forma:
     {
@@ -74,6 +76,19 @@ public class EmpresaController {
             return new ResponseEntity<>(men, HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>("La empresa ya existe", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // ACTUALIZAR DATOS
+
+    @PatchMapping("/enterprise/{id}")
+    public ResponseEntity<String> actualizarDatos(@RequestBody Empresa empresa_parametro, @PathVariable Integer id){
+        try {
+            servEmpresa.actualizarEmpresa(empresa_parametro, id);/* ServEmpresa es la variable de esta clase
+            se invoca el metodo que esta en la clse servicio y se envian los paramtros*/
+            return new ResponseEntity<>("Se actualizo la empresa correctamente", HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>("El id de la empresa no esta en la base de datos", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
