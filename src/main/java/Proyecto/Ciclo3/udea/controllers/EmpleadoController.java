@@ -19,13 +19,13 @@ public class EmpleadoController {
     private EmpleadoService servEmpleado;
 
     //MOSTRAR EMPLEADOS
-    @GetMapping("/enterprise")
+    @GetMapping("/user")
     public ResponseEntity<List<Empleado>> getEmpleado(){
         return new ResponseEntity<>(servEmpleado.empleadoGetAll(), HttpStatus.OK);
     }
 
     //BUSCAR EMPLEADO POR ID
-    @GetMapping("/enterprise/{id}")
+    @GetMapping("/user/{id}")
     public ResponseEntity<Object> getEmpleadoId(@PathVariable Integer id){
         try {
             Empleado e = servEmpleado.empleadoGetId(id);
@@ -37,7 +37,7 @@ public class EmpleadoController {
     }
 
     //CREAR DATOS
-    @PostMapping("/enterprise/{id}")
+    @PostMapping("/user/{id}")
     public ResponseEntity<String> crearDatos(@RequestBody Empleado empleadoRegistro){
         try {
             String men = servEmpleado.addEmpleado(empleadoRegistro);
@@ -49,13 +49,24 @@ public class EmpleadoController {
     }
 
     //ACTUALIZAR DATOS
-    @PostMapping("/enterprise")
+    @PostMapping("/user")
     public ResponseEntity<String> actualizarDatos(@RequestBody Empleado empleadoRegistro, @PathVariable Integer id){
         try {
-            servEmpleado.actualizarEmpleado(empleadoRegistro, id);
+            servEmpleado.updateEmpleado(empleadoRegistro, id);
             return new ResponseEntity<>("Se actualizo el empleado correctamente", HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>("El id del empleado no esta en la base de datos", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    //BORRAR
+    @DeleteMapping("/user/{id}")
+    public ResponseEntity<String> borrarDatos(@PathVariable Integer id){
+        try {
+            servEmpleado.borrarEmpleado(id); // Se envia el id que se va a eliminar
+            return new ResponseEntity<>("El empleado se borro con exito", HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>("El id del empleado no se logro encontrar para eliminarla", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

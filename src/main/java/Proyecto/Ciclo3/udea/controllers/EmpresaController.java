@@ -112,7 +112,7 @@ public class EmpresaController {
     // BORRAR DATOS
 
     @DeleteMapping("/enterprise/{id}")
-    public ResponseEntity<String> borrarDatos(@PathVariable Integer id){
+    public ResponseEntity<String> borrarEmpleado(@PathVariable Integer id){
         try {
             servEmpresa.borrar(id); // Se envia el id que se va a eliminar
             return new ResponseEntity<>("La empresa se borro con exito", HttpStatus.OK);

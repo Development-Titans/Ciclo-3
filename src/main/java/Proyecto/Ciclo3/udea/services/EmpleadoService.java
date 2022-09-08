@@ -68,7 +68,7 @@ public class EmpleadoService implements EmpleadoInterface {
     @Override
     public String borrarEmpleado(Integer id) throws Exception{
         try {
-            repoEmpleado.deleteById(id); // Si encuentra el id entonces borra la empresa
+            repoEmpleado.deleteById(id); // Si encuentra el id entonces borra el empleado
             return "El empleado se elimino con exito";
         }catch (Exception e){
             throw new Exception("El id del empleado que quiere eliminar no se encuentra");

@@ -48,7 +48,7 @@ public class MovimientoDinero {
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public long getId() {
+    public Integer getId() {
         return idMovimientoDinero;
     }
 
