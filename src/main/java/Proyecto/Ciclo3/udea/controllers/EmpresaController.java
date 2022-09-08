@@ -25,7 +25,9 @@ public class EmpresaController {
 
     // BUSCAR EMPRESA POR ID
 
-    @GetMapping("/enterprise/{id}") /* Para probarla se coloca de la siguiente forma http://localhost:8080/enterprise/enterprise/1*/
+    /* Para probarla se coloca de la siguiente forma http://localhost:8080/enterprise/enterprise/1 el 1 es el id a
+    consultar*/
+    @GetMapping("/enterprise/{id}")
     public ResponseEntity<Object> getEmpresasId(@PathVariable Integer id) {
         try {
             Empresa e = servEmpresa.empresaGetId(id);
@@ -49,7 +51,7 @@ public class EmpresaController {
     "direccion": "Cra 16 # 2 - 15",
     "usuario": [
         {
-            "idEmpleado": 1,
+            "idEmpleado": 2,
             "nombre": "Juan Taborda",
             "correo": "alejandro@gmail.com",
             "rol": "Administrador",
@@ -81,14 +83,41 @@ public class EmpresaController {
 
     // ACTUALIZAR DATOS
 
+    /* Para probar este metodo nos vamos a la url http://localhost:8080/enterprise/1 en postman, seleccionamos el
+    metodo Patch, seleccionamos el boton body, seleccionamos raw, luego cambiamos text por JSON y escribimos lo
+    siguiente:
+    {
+    "nombre": "Porvenir",
+    "nit": "14585",
+    "telefono": "548287521",
+    "direccion": "Cra 10 # 2 - 45",
+    "fechaCreacion": "2015-10-13",
+    "fechaActualizacion": "2012-09-21",
+    "idEmpresa": 4
+    }
+
+    En la url el 1 es el id del dato que vamos actualizar y cambiamos los datos */
     @PatchMapping("/enterprise/{id}")
-    public ResponseEntity<String> actualizarDatos(@RequestBody Empresa empresa_parametro, @PathVariable Integer id){
+    public ResponseEntity<String> actualizarDatos(@RequestBody Empresa empresa_parametro, @PathVariable Integer id){ /* En el
+        parametro estamos enviando la informacion y el id que vamos actualizar*/
         try {
             servEmpresa.actualizarEmpresa(empresa_parametro, id);/* ServEmpresa es la variable de esta clase
             se invoca el metodo que esta en la clse servicio y se envian los paramtros*/
             return new ResponseEntity<>("Se actualizo la empresa correctamente", HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>("El id de la empresa no esta en la base de datos", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // BORRAR DATOS
+
+    @DeleteMapping("/enterprise/{id}")
+    public ResponseEntity<String> borrarDatos(@PathVariable Integer id){
+        try {
+            servEmpresa.borrar(id); // Se envia el id que se va a eliminar
+            return new ResponseEntity<>("La empresa se borro con exito", HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>("El id de la empresa no se logro encontrar para eliminarla", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

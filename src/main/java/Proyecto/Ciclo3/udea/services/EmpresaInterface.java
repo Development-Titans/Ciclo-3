@@ -10,4 +10,5 @@ public interface EmpresaInterface {
     public Empresa empresaGetId(Integer id) throws Exception ;
     public String addempresa(Empresa empresa_parametro) throws Exception;
     public String actualizarEmpresa(Empresa emp, Integer id) throws Exception;
+    public String borrar(Integer id) throws Exception;
 }

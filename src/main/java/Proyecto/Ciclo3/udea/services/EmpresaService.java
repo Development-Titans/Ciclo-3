@@ -66,6 +66,17 @@ public class EmpresaService implements EmpresaInterface { // Se genera superclas
             throw new Exception("El id que intenta actualizar no esta en la base de datos");
         }
     }
+
+    // BORRAR DATOS
+    @Override
+    public String borrar(Integer id) throws Exception{
+        try {
+            repoEmpresa.deleteById(id); // Si encuentra el id entonces borra la empresa
+            return "La empresa se elimino con exito";
+        }catch (Exception e){
+            throw new Exception("El id de la empresa que quiere eliminar no se encuentra");
+        }
+    }
 }
 
 
