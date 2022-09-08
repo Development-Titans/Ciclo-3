@@ -9,9 +9,7 @@ import Proyecto.Ciclo3.udea.services.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,6 +34,29 @@ public class EmpleadoController {
         }catch (Exception e){
             ObjetoRespuesta s = new ObjetoRespuesta();
             return new ResponseEntity<>(s.getRespuestaEmpleado(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    //CREAR DATOS
+    @PostMapping("/users")
+    public ResponseEntity<String> crearDatos(@RequestBody Empleado empleadoRegistro){
+        try {
+            String men = servEmpleado.addEmpleado(empleadoRegistro);
+            return new ResponseEntity<>(men, HttpStatus.OK);
+
+        }catch (Exception e){
+            return new ResponseEntity<>("El empleado ya existe", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    //ACTUALIZAR DATOS
+    @PatchMapping("/users/{id}")
+    public ResponseEntity<String> actualizarDatos(@RequestBody Empleado empleadoRegistro, @PathVariable Integer id){
+        try {
+            servEmpleado.updateEmpleado(empleadoRegistro, id);
+            return new ResponseEntity<>("Se actualizo el empleado correctamente", HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>("El id del empleado no esta en la base de datos", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
