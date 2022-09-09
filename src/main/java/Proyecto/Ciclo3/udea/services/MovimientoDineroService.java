@@ -17,12 +17,14 @@ public class MovimientoDineroService implements MovimientoDineroInterface {
     private MovimientoDineroRepository repoMovimiento;
 
     // VER EMPRESAS
+
     @Override // Inyeccion, oblica a crear una interface diferente al repositorio, sirve para enviar una peticion al repositorio
     public List<MovimientoDinero> movimientoGetAll() {
         return repoMovimiento.findAll();
     }
 
     // VER MOVIMIENTO BUSCADA POR ID
+
     @Override
     public MovimientoDinero movimientoGetId(Integer id) throws Exception {
         Optional<MovimientoDinero> s = repoMovimiento.findById(id);
@@ -34,6 +36,7 @@ public class MovimientoDineroService implements MovimientoDineroInterface {
     }
 
     // CREAR UN MOVIMIENTO
+
     @Override
     public String addMovimiento(MovimientoDinero movimientoRegistro) throws Exception{
         try {/* Se valida que el id no exista*/
@@ -46,6 +49,7 @@ public class MovimientoDineroService implements MovimientoDineroInterface {
     }
 
     // ACTUALIZACION DE DATOS
+
     @Override
     public String updateMovimiento(MovimientoDinero mov, Integer id) throws Exception{ /* Recibimos los parametros del
         controlador */
@@ -67,6 +71,7 @@ public class MovimientoDineroService implements MovimientoDineroInterface {
     }
 
     // BORRAR DATOS
+
     @Override
     public String deleteMovimiento(Integer id) throws Exception{
         try {

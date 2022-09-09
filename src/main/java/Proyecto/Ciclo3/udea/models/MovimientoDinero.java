@@ -12,9 +12,9 @@ public class MovimientoDinero {
     @Column(name = "id_movimento_dinero")
     @JsonIgnore
     private Integer idMovimientoDinero;
-    @JsonIgnore
+
     private String concepto;
-    @JsonIgnore
+
     private float monto;
     @ManyToOne
     @JsonIgnore
@@ -29,10 +29,10 @@ public class MovimientoDinero {
     asignar un id de lo que ya esta creado */
     private Empresa empresa;
     @Column(name = "fecha_creacion")
-    @JsonIgnore
+
     private LocalDate fechaCreacion;
     @Column(name = "fecha_actualizacion")
-    @JsonIgnore
+
     private LocalDate fechaActualizacion;
 
     public MovimientoDinero() {

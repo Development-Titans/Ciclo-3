@@ -19,22 +19,16 @@ public class EmpleadoController {
     @Autowired
     private EmpleadoInterface servEmpleado;
 
-    //MOSTRAR EMPLEADOS
-<<<<<<< HEAD
-    @GetMapping("/user")
-=======
+    // MOSTRAR EMPLEADOS
+
     @GetMapping("/users")
->>>>>>> 30ffc894e0eb26a144bef622ce9599a6337bd312
     public ResponseEntity<List<Empleado>> getEmpleado(){
         return new ResponseEntity<>(servEmpleado.empleadoGetAll(), HttpStatus.OK);
     }
 
-    //BUSCAR EMPLEADO POR ID
-<<<<<<< HEAD
-    @GetMapping("/user/{id}")
-=======
+    // BUSCAR EMPLEADO POR ID
+
     @GetMapping("/users/{id}")
->>>>>>> 30ffc894e0eb26a144bef622ce9599a6337bd312
     public ResponseEntity<Object> getEmpleadoId(@PathVariable Integer id){
         try {
             Empleado e = servEmpleado.empleadoGetId(id);
@@ -45,12 +39,9 @@ public class EmpleadoController {
         }
     }
 
-    //CREAR DATOS
-<<<<<<< HEAD
-    @PostMapping("/user/{id}")
-=======
+    // CREAR DATOS
+
     @PostMapping("/users")
->>>>>>> 30ffc894e0eb26a144bef622ce9599a6337bd312
     public ResponseEntity<String> crearDatos(@RequestBody Empleado empleadoRegistro){
         try {
             String men = servEmpleado.addEmpleado(empleadoRegistro);
@@ -61,12 +52,9 @@ public class EmpleadoController {
         }
     }
 
-    //ACTUALIZAR DATOS
-<<<<<<< HEAD
-    @PostMapping("/user")
-=======
+    // ACTUALIZAR DATOS
+
     @PatchMapping("/users/{id}")
->>>>>>> 30ffc894e0eb26a144bef622ce9599a6337bd312
     public ResponseEntity<String> actualizarDatos(@RequestBody Empleado empleadoRegistro, @PathVariable Integer id){
         try {
             servEmpleado.updateEmpleado(empleadoRegistro, id);
@@ -76,8 +64,8 @@ public class EmpleadoController {
         }
     }
 
-    //BORRAR
-    @DeleteMapping("/user/{id}")
+    // BORRAR
+    @DeleteMapping("/users/{id}")
     public ResponseEntity<String> borrarDatos(@PathVariable Integer id){
         try {
             servEmpleado.borrarEmpleado(id); // Se envia el id que se va a eliminar

@@ -19,7 +19,8 @@ public class MovimientoDineroController {
     private MovimientoDineroInterface servMovimiento;
 
     // MOSTRAR MOVIMIENTOS
-    @GetMapping("/enterprises/movements")
+
+    @GetMapping("/enterprise/movements")
     public ResponseEntity<List<MovimientoDinero>> getMovimiento(){
         return new ResponseEntity<>(servMovimiento.movimientoGetAll(), HttpStatus.OK);
     }
@@ -41,6 +42,7 @@ public class MovimientoDineroController {
     }
 
     // CREAR DATOS
+
     @PostMapping("/enterprise/movements")
     public ResponseEntity<String> crearDatos(@RequestBody MovimientoDinero movimientoRegistro){
         try { /* Retorna un mensaje de exito o de error */
@@ -53,9 +55,11 @@ public class MovimientoDineroController {
     }
 
     // ACTUALIZAR DATOS
+
     /* Para probar este metodo nos vamos a la url http://localhost:8080/enterprise/movements/1 en postman, seleccionamos el
     metodo Patch, seleccionamos el boton body, seleccionamos raw, luego cambiamos text por JSON
      */
+
     @PatchMapping("/enterprise/{id}/movements")
     public ResponseEntity<String> actualizarDatos(@RequestBody MovimientoDinero movimientoRegistro, @PathVariable Integer id){ /* En el
         parametro estamos enviando la informacion y el id que vamos actualizar*/
@@ -69,6 +73,7 @@ public class MovimientoDineroController {
     }
 
     // BORRAR DATOS
+
     @DeleteMapping("/enterprise/{id}/movements")
     public ResponseEntity<String> borrarEmpleado(@PathVariable Integer id){
         try {

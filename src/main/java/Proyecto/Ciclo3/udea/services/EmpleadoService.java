@@ -17,6 +17,7 @@ public class EmpleadoService implements EmpleadoInterface {
 
 
     // VER EMPRESAS
+
     @Override
     public List<Empleado> empleadoGetAll(){
         return repoEmpleado.findAll();
@@ -24,6 +25,7 @@ public class EmpleadoService implements EmpleadoInterface {
 
 
     // BUSCAR POR ID
+
     @Override
     public Empleado empleadoGetId(Integer id) throws Exception{
         Optional<Empleado> s = repoEmpleado.findById(id);
@@ -35,6 +37,7 @@ public class EmpleadoService implements EmpleadoInterface {
     }
 
     //CREAR EMPLEADO
+
     @Override
     public String addEmpleado(Empleado empleadoRegistro) throws Exception{
         try {/* Se valida que el id no exista*/
@@ -47,6 +50,7 @@ public class EmpleadoService implements EmpleadoInterface {
     }
 
     // ACTUALIZAR EMPLEADO
+
     @Override
     public String updateEmpleado(Empleado emp, Integer id) throws Exception{ /* Recibimos los parametros del controlador */
         try {
@@ -66,6 +70,7 @@ public class EmpleadoService implements EmpleadoInterface {
     }
 
     // BORRAR DATOS
+
     @Override
     public String borrarEmpleado(Integer id) throws Exception{
         try {
