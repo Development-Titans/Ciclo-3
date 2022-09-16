@@ -1,9 +1,7 @@
 package Proyecto.Ciclo3.udea.controllers;
 
-import Proyecto.Ciclo3.udea.models.Empresa;
 import Proyecto.Ciclo3.udea.models.MovimientoDinero;
 import Proyecto.Ciclo3.udea.models.ObjetoRespuesta;
-import Proyecto.Ciclo3.udea.services.EmpresaInterface;
 import Proyecto.Ciclo3.udea.services.MovimientoDineroInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

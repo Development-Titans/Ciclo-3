@@ -12,12 +12,10 @@ public class MovimientoDinero {
     @Column(name = "id_movimento_dinero")
     @JsonIgnore
     private Integer idMovimientoDinero;
-
     private String concepto;
 
     private float monto;
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "id_empleado", insertable = false, updatable = false)/* Esto se hace porque no vamos a crear ni
     actualizar empleados desde esta tabla, por ende se va a mapear o guiar desde el id de empleado directamente y aqui solo se va
     asignar un id de lo que ya esta creado */

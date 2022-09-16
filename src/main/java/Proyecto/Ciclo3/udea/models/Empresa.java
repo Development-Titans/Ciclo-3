@@ -16,6 +16,7 @@ public class Empresa {
     private String nit;
     private String telefono;
     private String direccion;
+    @JsonIgnore
     @OneToMany(mappedBy = "empresa") // Se mapea porque es la que maneja la cantidad
     private List<Empleado> usuario;
     @OneToMany(mappedBy = "empresa")

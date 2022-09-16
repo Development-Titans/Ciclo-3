@@ -1,11 +1,8 @@
 package Proyecto.Ciclo3.udea.controllers;
 
 import Proyecto.Ciclo3.udea.models.Empleado;
-import Proyecto.Ciclo3.udea.models.Empresa;
 import Proyecto.Ciclo3.udea.models.ObjetoRespuesta;
 import Proyecto.Ciclo3.udea.services.EmpleadoInterface;
-import Proyecto.Ciclo3.udea.services.EmpleadoService;
-import Proyecto.Ciclo3.udea.services.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

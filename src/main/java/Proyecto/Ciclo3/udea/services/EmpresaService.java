@@ -1,10 +1,8 @@
 package Proyecto.Ciclo3.udea.services;
 
 import Proyecto.Ciclo3.udea.models.Empresa;
-import Proyecto.Ciclo3.udea.models.ObjetoRespuesta;
 import Proyecto.Ciclo3.udea.repositories.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -61,9 +59,9 @@ public class EmpresaService implements EmpresaInterface { // Se genera superclas
             g.setFechaActualizacion(emp.getFechaActualizacion());
             g.setFechaCreacion(emp.getFechaCreacion());
             repoEmpresa.save(g); // Finalmente se guarda lo que se modifico en la variable g y quedan actualizados los datos
-            return "Se actualizaron los datos con exito";
+            return "Se actualizaron los datos de la empresa con exito";
         }catch (Exception e){
-            throw new Exception("El id que intenta actualizar no esta en la base de datos");
+            throw new Exception("El id de la empresa que intenta actualizar no esta en la base de datos");
         }
     }
 

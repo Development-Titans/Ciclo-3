@@ -2,11 +2,8 @@ package Proyecto.Ciclo3.udea.repositories;
 
 import Proyecto.Ciclo3.udea.models.Empresa;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 
 @Repository
 public interface EmpresaRepository extends JpaRepository<Empresa, Integer> {
@@ -20,7 +17,7 @@ public interface EmpresaRepository extends JpaRepository<Empresa, Integer> {
     /* @Modifying */ /* Le decimos al repositorio que vamos a modificar los datos con el siguiente metodo */
     /* @Query("UPDATE Empresa u SET u.nombre= :nombre, u.nit= :nit, u.telefono= :telefono, u.direccion= :direccion, u.fechaActualizacion= :fechaActualizacion, u.fechaCreacion= :fechaCreacion WHERE u.id_empresa= :id")
     /* public int actualizar(String nombre, String nit, String telefono, String direccion, LocalDate fecha_creacion,
-                          LocalDate fechaActualizacion, Integer id); */
+    LocalDate fechaActualizacion, Integer id); */
 
 }
 

@@ -1,6 +1,5 @@
 package Proyecto.Ciclo3.udea.services;
 
-import Proyecto.Ciclo3.udea.models.Empresa;
 import Proyecto.Ciclo3.udea.models.MovimientoDinero;
 
 import java.util.List;
