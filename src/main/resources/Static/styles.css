@@ -1,0 +1,91 @@
+.contenedor{
+    max-width: 120rem; /*toma 1200px como maximo y si esta disponible*/
+    margin: 0 auto 0 auto
+}
+
+.margen{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    margin-top: 170px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.margennav{
+    display: flex;
+    justify-content: center;
+}
+
+.cuadrito{
+    background-color: black;
+    margin-top: 25px;
+    display: flex;
+}
+
+.margentabla{
+    margin-left: 250px;
+    margin-right: 300px;
+    margin-top: 50px;
+}
+
+.color{
+    background-color: rgb(108, 108, 219);
+}
+
+.colorletra{
+    color: rgb(252, 252, 252);
+}
+
+.border{
+    border-color: rgb(24, 24, 23);
+}
+
+.doselementos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.fondo{
+    background-color: rgba(225, 218, 250, 0.244);
+}
+
+.letras{
+    align-items: center;
+    display: flex;
+    background-color: rgba(0, 255, 255, 0);
+    justify-content: center;
+    width: 400px;
+    height: 160px;
+    margin-left: 405px;
+    margin-bottom: 0px;
+}
+
+.desplazamiento{
+    display: flex;
+    justify-content: start;
+}
+
+.margin{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.boton{
+    margin-bottom: 15px;
+}
+
+.contenedorcrearem{
+    background-color: #EEF1FF;
+    width: 600px;
+    height: 500px;
+    padding: 40px 40px 40px 40px;
+}
+
+.centrar{
+    display: flex;
+    justify-content: center;
+}
+
+.letras2{
+    text-align: center;
+}

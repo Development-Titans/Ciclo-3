@@ -25,17 +25,14 @@ public class MovimientoDineroController {
 
     // BUSCAR MOVIMIENTO POR ID
 
-    /* Para probarla se coloca de la siguiente forma http://localhost:8080/enterprise/movements/1 el 1 es el id a
-    consultar*/
     @GetMapping("/enterprise/{id}/movements")
     public ResponseEntity<Object> getMovimientoId(@PathVariable Integer id) {
         try {
             MovimientoDinero e = servMovimiento.movimientoGetId(id);
             return new ResponseEntity<>(e, HttpStatus.OK);
         }catch (Exception e){
-            ObjetoRespuesta s = new ObjetoRespuesta(); /* Se inicializa un objeto de respuesta*/
-            return new ResponseEntity<>(s.getRespuestaMovimiento(), HttpStatus.INTERNAL_SERVER_ERROR); /* Se muestra el error
-            por si no encuentra el id */
+            ObjetoRespuesta s = new ObjetoRespuesta();//Se inicializa un objeto de respuesta
+            return new ResponseEntity<>(s.getRespuestaMovimiento(), HttpStatus.INTERNAL_SERVER_ERROR); // Se muestra el error por si no encuentra el id
         }
     }
 
@@ -43,9 +40,8 @@ public class MovimientoDineroController {
 
     @PostMapping("/enterprise/movements")
     public ResponseEntity<String> crearDatos(@RequestBody MovimientoDinero movimientoRegistro){
-        try { /* Retorna un mensaje de exito o de error */
-            String men = servMovimiento.addMovimiento(movimientoRegistro);/* La variable men se crea aqui mismo y servMovimiento
-            es la variable que hay en esta clase */
+        try { //Retorna un mensaje de exito o de error
+            String men = servMovimiento.addMovimiento(movimientoRegistro);// La variable men se crea aqui mismo y servMovimiento es la variable que hay en esta clase
             return new ResponseEntity<>(men, HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>("El movimineto de dinero ya existe", HttpStatus.INTERNAL_SERVER_ERROR);
@@ -54,16 +50,10 @@ public class MovimientoDineroController {
 
     // ACTUALIZAR DATOS
 
-    /* Para probar este metodo nos vamos a la url http://localhost:8080/enterprise/movements/1 en postman, seleccionamos el
-    metodo Patch, seleccionamos el boton body, seleccionamos raw, luego cambiamos text por JSON
-     */
-
     @PatchMapping("/enterprise/{id}/movements")
-    public ResponseEntity<String> actualizarDatos(@RequestBody MovimientoDinero movimientoRegistro, @PathVariable Integer id){ /* En el
-        parametro estamos enviando la informacion y el id que vamos actualizar*/
+    public ResponseEntity<String> actualizarDatos(@RequestBody MovimientoDinero movimientoRegistro, @PathVariable Integer id){ // En el parametro estamos enviando la informacion y el id que vamos actualizar
         try {
-            servMovimiento.updateMovimiento(movimientoRegistro, id);/* ServMovimiento es la variable de esta clase
-            se invoca el metodo que esta en la clse servicio y se envian los paramtros*/
+            servMovimiento.updateMovimiento(movimientoRegistro, id);//ServMovimiento es la variable de esta clase se invoca el metodo que esta en la clse servicio y se envian los paramtros
             return new ResponseEntity<>("Se actualizo el movimiento de dinero correctamente", HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>("El id del movimineto de dinero no esta en la base de datos", HttpStatus.INTERNAL_SERVER_ERROR);
@@ -81,4 +71,5 @@ public class MovimientoDineroController {
             return new ResponseEntity<>("El id de movimiento de dinero no se logro encontrar para eliminarla", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 }
