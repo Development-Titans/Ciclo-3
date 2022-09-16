@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
@@ -7,14 +7,13 @@
     <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body class="contenedor">
-
     <div class="margen mediano">
         <div class="card" style="width: 18rem;">
             <img src="img/Empresas.jpg" class="card-img-top" alt="Su navegador no soporta esta imagen">
             <div class="card-body">
                 <h5 class="card-title">EMPRESAS</h5>
                 <p class="card-text">Ingresa para gestionar cada una de tus empresas y ver los datos.</p>
-                <a th:href="@{/empresa}" btn btn-primary">Ir a Empresas</a>
+                <a href="#" class="btn btn-primary">Ir a Empresas</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -34,8 +33,5 @@
             </div>
         </div>
     </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-
 </body>
 </html>
