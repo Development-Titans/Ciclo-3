@@ -1,4 +1,4 @@
-package Proyecto.Ciclo3.udea.controllers;
+package Proyecto.Ciclo3.udea.frontControllers;
 
 import Proyecto.Ciclo3.udea.models.MovimientoDinero;
 import Proyecto.Ciclo3.udea.services.MovimientoDineroInterface;
@@ -22,12 +22,6 @@ public class FrontControllerMovimiento {
         this.service = service;
     }
 
-    //@RequestMapping(value="/",method = RequestMethod.GET)
-    @GetMapping("/index")
-    public String index(){
-        return "index";
-    }
-
     //Metodo para mostrar todos los registros
     @GetMapping("/movimientoDinero")
     public String movimientoDinero(Model model){
@@ -36,14 +30,8 @@ public class FrontControllerMovimiento {
         return "movimientoDinero";
     }
 
-    @GetMapping("/usuarios")
-    public  String usuarios(){
-        return "usuarios";
+    @GetMapping("/crearTransacciones")
+    public String crearMovimiento(){
+        return "crearTransacciones";
     }
-
-    @GetMapping("/empresa")
-    public  String empresa(){
-        return "empresa";
-    }
-
 }

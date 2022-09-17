@@ -89,3 +89,27 @@
 .letras2{
     text-align: center;
 }
+
+.imagen{
+    background-image: url(/Images/Login.jpg);
+    background-size: cover;
+    width: 1536px;
+    height: 745px;
+    background-repeat: no-repeat
+}
+
+.login{
+    background-color: rgba(236, 249, 59, 0.727);
+    width: 400px;
+    height: 500px;
+    margin-top: 100px;
+}
+
+.boton{
+    margin-bottom: 1rem;
+}
+
+h1 {
+    text-align: center;
+    justify-content: center;
+}
