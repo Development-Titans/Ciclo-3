@@ -28,13 +28,13 @@ public class FrontControllerUsuarios {
     }
 
     @RequestMapping(value = "/crearusuario", method = RequestMethod.GET)
-    public  String crearUsuario(@ModelAttribute Empleado raichu, Model model) throws Exception{
+    public  String crearUsuario(@ModelAttribute Empleado raichu, Model model){
         model.addAttribute("raichu", new Empleado());
         return "crearUsuario";
     }
 
     @RequestMapping(value = "/crearusuario", method = RequestMethod.POST)
-    public String agregar(@ModelAttribute Model model, Empleado raichu)throws Exception{
+    public String agregar(@ModelAttribute Empleado raichu, Model model)throws Exception{
         controllersUsuarios.addEmpleado(raichu);
         return "redirect:/usuarios";
     }
