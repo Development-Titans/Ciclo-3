@@ -13,12 +13,14 @@ public class Empleado {
     private Integer idEmpleado;
     private String nombre;
     private String correo;
+    private String telefono;
     @OneToOne
     @JsonIgnore
     @JoinColumn(name = "id_perfil", insertable = false, updatable = false)
     private Perfil perfil;
     @Enumerated(EnumType.STRING)
-    private Enum_NombreRol rol;
+    @ElementCollection(targetClass = Enum_NombreRol.class)
+    private List<Enum_NombreRol> rol;
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "id_empresa", insertable = false, updatable = false) /* Esto se hace porque NO vamos a crear
@@ -36,10 +38,11 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(Integer idEmpleado, String nombre, String correo, Perfil perfil, Enum_NombreRol rol, Empresa empresa, List<MovimientoDinero> transaccion, LocalDate fechaCreacion, LocalDate fechaActualizacion) {
+    public Empleado(Integer idEmpleado, String nombre, String correo, String telefono, Perfil perfil, List<Enum_NombreRol> rol, Empresa empresa, List<MovimientoDinero> transaccion, LocalDate fechaCreacion, LocalDate fechaActualizacion) {
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.correo = correo;
+        this.telefono = telefono;
         this.perfil = perfil;
         this.rol = rol;
         this.empresa = empresa;
@@ -71,7 +74,13 @@ public class Empleado {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+    public String getTelefono() {
+        return telefono;
+    }
 
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
     public Perfil getPerfil() {
         return perfil;
     }
@@ -80,11 +89,11 @@ public class Empleado {
         this.perfil = perfil;
     }
 
-    public Enum_NombreRol getRol() {
+    public List<Enum_NombreRol> getRol() {
         return rol;
     }
 
-    public void setRol(Enum_NombreRol rol) {
+    public void setRol(List<Enum_NombreRol> rol) {
         this.rol = rol;
     }
 
