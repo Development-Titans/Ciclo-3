@@ -25,30 +25,25 @@
         </div>
     </div>
     <div class="margentabla">
-        <a th:href="@{/crearTransacciones}" class="btn btn-primary boton">Nuevo</a>
+        <a th:href="@{/nuevoMovimiento}" class="btn btn-primary boton">Nuevo</a>
         <table class="table border">
             <thead>
-                <tr>
-                    <th scope="col">Concepto</th>
-                    <th scope="col">Monto</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Usuario</th>
+                <tr class="color">
+                    <th class="colorletra" scope="col">Concepto</th>
+                    <th class="colorletra" scope="col">Monto</th>
+                    <th class="colorletra" scope="col">Fecha Actualizacion</th>
+                    <th class="colorletra" scope="col">Fecha Creacion</th>
                 </tr>
             </thead>
-            <!--Muestra todos los registros-->
             <tbody>
-                <tr th:each = "movimientoPlata : ${movimientoDinero}">
-                    <th th:text = "${movimientoPlata.concepto}"></th>
-                    <td th:text = "${movimientoPlata.monto}"></td>
-                    <td th:text = "${movimientoPlata.fechaCreacion}"></td>
-                    <td th:text = "${movimientoPlata.usuario}"></td>
+                <tr th:each="movimientoPlata: ${x}">
+                    <th scope="row" th:text = "${movimientoPlata.concepto}"></th>
+                    <th scope="row" th:text = "${movimientoPlata.monto}"></th>
+                    <th scope="row" th:text = "${movimientoPlata.fechaActualizacion}"></th>
+                    <th scope="row" th:text = "${movimientoPlata.fechaCreacion}"></th>
                 </tr>
             </tbody>
         </table>
-
-</div>
-
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
--->
+    </div>
 </body>
 </html>

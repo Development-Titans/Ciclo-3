@@ -16,10 +16,10 @@ import java.util.List;
 public class FrontControllerMovimiento {
     
     @Autowired
-    MovimientoDineroService controlador;
+    private MovimientoDineroService controlador;
 
     @GetMapping("/movimientoDinero")
-    public String Dinero(Model model){
+    public String dinero(Model model){
         List<MovimientoDinero> x = controlador.movimientoGetAll();
         model.addAttribute("x", x);
         return "movimientoDinero";

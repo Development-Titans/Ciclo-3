@@ -3,7 +3,6 @@ package Proyecto.Ciclo3.udea.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 @Entity
 @Table(name = "movimiento_dinero")
 public class MovimientoDinero {
@@ -28,15 +27,15 @@ public class MovimientoDinero {
     private Empresa empresa;
     @Column(name = "fecha_creacion")
 
-    private LocalDate fechaCreacion;
+    private String fechaCreacion;
     @Column(name = "fecha_actualizacion")
 
-    private LocalDate fechaActualizacion;
+    private String fechaActualizacion;
 
     public MovimientoDinero() {
     }
 
-    public MovimientoDinero(Integer idMovimientoDinero, String concepto, float monto, Empleado usuario, Empresa empresa, LocalDate fechaCreacion, LocalDate fechaActualizacion) {
+    public MovimientoDinero(Integer idMovimientoDinero, String concepto, float monto, Empleado usuario, Empresa empresa, String fechaCreacion, String fechaActualizacion) {
         this.idMovimientoDinero = idMovimientoDinero;
         this.concepto = concepto;
         this.monto = monto;
@@ -86,19 +85,19 @@ public class MovimientoDinero {
         this.empresa = empresa;
     }
 
-    public LocalDate getFechaCreacion() {
+    public String getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(LocalDate fechaCreacion) {
+    public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public LocalDate getFechaActualizacion() {
+    public String getFechaActualizacion() {
         return fechaActualizacion;
     }
 
-    public void setFechaActualizacion(LocalDate fechaActualizacion) {
+    public void setFechaActualizacion(String fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
 }
