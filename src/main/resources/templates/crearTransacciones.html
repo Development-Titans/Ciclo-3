@@ -28,7 +28,10 @@
     </div>
     <div class="centrar">
         <div class="contenedorcrearem">
-            <form>
+
+            <form action="#" th:action="@{/nuevoMovimiento}" th:object="${movimientoDinero}" method="post">
+                
+                
                 <h3 style="margin-bottom: 30px;" class="letras2">Nuevo Movimiento de Dinero</h1>
                     <div class="mb-3">
                         <label for="ejemplo@gmail.com" class="form-label">Monto: $ </label>
