@@ -1,5 +1,5 @@
 package Proyecto.Ciclo3.udea.controllers;
-
+/* 
 import Proyecto.Ciclo3.udea.models.MovimientoDinero;
 import Proyecto.Ciclo3.udea.models.ObjetoRespuesta;
 import Proyecto.Ciclo3.udea.services.MovimientoDineroInterface;
@@ -73,3 +73,4 @@ public class MovimientoDineroController {
     }
 
 }
+*/

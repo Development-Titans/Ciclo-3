@@ -28,28 +28,21 @@
         <a th:href="@{/crearTransacciones}" class="btn btn-primary boton">Nuevo</a>
         <table class="table border">
             <thead>
-            <tr class="color">
-                <th class="colorletra" scope="col">Concepto</th>
-                <th class="colorletra" scope="col">Monto</th>
-                <th class="colorletra" scope="col">Fecha</th>
-                <th class="colorletra" scope="col">Usuario</th>
-            </tr>
+                <tr>
+                    <th scope="col">Concepto</th>
+                    <th scope="col">Monto</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Usuario</th>
+                </tr>
             </thead>
             <!--Muestra todos los registros-->
             <tbody>
-
-                <tr th:each = "movimientoDinero : ${movimientoDinero}">
-                    <td th:text = "${movimientoDinero.concepto}"></td>
-                    <td th:text = "${movimientoDinero.monto}"></td>
-                    <td th:text = "${movimientoDinero.fechaCreacion}"></td>
-                    <td th:text = "${movimientoDinero.usuario}"></td>
+                <tr th:each = "movimientoPlata : ${movimientoDinero}">
+                    <th th:text = "${movimientoPlata.concepto}"></th>
+                    <td th:text = "${movimientoPlata.monto}"></td>
+                    <td th:text = "${movimientoPlata.fechaCreacion}"></td>
+                    <td th:text = "${movimientoPlata.usuario}"></td>
                 </tr>
-
-                <tr>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-
             </tbody>
         </table>
 
