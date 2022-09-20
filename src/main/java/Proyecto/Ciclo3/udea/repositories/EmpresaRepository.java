@@ -1,13 +1,15 @@
 package Proyecto.Ciclo3.udea.repositories;
 
-import Proyecto.Ciclo3.udea.models.Empresa;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import Proyecto.Ciclo3.udea.models.Empresa;
 
 @Repository
 public interface EmpresaRepository extends JpaRepository<Empresa, Integer> {
 
     /*
+     * `
      * Update es para actualizar, luego sigue el nombre de la clase o de la tabla,
      * la u le estamos diciendo
      * que todo lo de Empresa va a estar en la variable u. El set es porque vamos a
