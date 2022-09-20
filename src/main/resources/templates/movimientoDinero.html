@@ -43,6 +43,12 @@
                     <th scope="row" th:text = "${movimientoPlata.fechaCreacion}"></th>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr class="color">
+                    <th class="colorletra" scope="col">Total $</th>
+                    <th class="colorletra" scope="col" th:text = "${total}"></th>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </body>

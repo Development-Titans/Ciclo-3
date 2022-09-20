@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import java.util.List;
 
 @Controller
@@ -21,7 +20,13 @@ public class FrontControllerMovimiento {
     @GetMapping("/movimientoDinero")
     public String dinero(Model model){
         List<MovimientoDinero> x = controlador.movimientoGetAll();
+        float total = 0;
+        for(MovimientoDinero mov : x) {
+            total += mov.getMonto();
+        }
         model.addAttribute("x", x);
+        model.addAttribute("total", total);
+        System.out.println("El total es: " + total);
         return "movimientoDinero";
     }
 
@@ -30,11 +35,11 @@ public class FrontControllerMovimiento {
         model.addAttribute("movimientoDinero", new MovimientoDinero());
         return "crearTransacciones";
     }
- 
+
     @PostMapping("/nuevoMovimiento")
     public String nuevo(@ModelAttribute MovimientoDinero movimientoDinero, Model model) throws Exception{
         controlador.addMovimiento(movimientoDinero);
         return "redirect:/movimientoDinero";
     }
-
+    
 }
