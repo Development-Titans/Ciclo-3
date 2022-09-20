@@ -16,6 +16,8 @@ public class Empresa {
     private String nit;
     private String telefono;
     private String direccion;
+    private String director;
+    private String correo;
     @JsonIgnore
     @OneToMany(mappedBy = "empresa") // Se mapea porque es la que maneja la cantidad
     private List<Empleado> usuario;
@@ -29,13 +31,14 @@ public class Empresa {
     public Empresa() {
     }
 
-    public Empresa(Integer idEmpresa, String nombre, String nit, String telefono, String direccion, List<Empleado> usuario, List<MovimientoDinero> transaccion, LocalDate fechaCreacion, LocalDate fechaActualizacion) {
+    public Empresa(Integer idEmpresa, String correo, String director, String nombre, String nit, String telefono, String direccion, List<Empleado> usuario, List<MovimientoDinero> transaccion, LocalDate fechaCreacion, LocalDate fechaActualizacion) {
         this.idEmpresa = idEmpresa;
         this.nombre = nombre;
         this.nit = nit;
         this.telefono = telefono;
         this.direccion = direccion;
         this.usuario = usuario;
+        this.correo = correo;
         Transaccion = transaccion;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
@@ -111,5 +114,21 @@ public class Empresa {
 
     public void setFechaActualizacion(LocalDate fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
     }
 }
