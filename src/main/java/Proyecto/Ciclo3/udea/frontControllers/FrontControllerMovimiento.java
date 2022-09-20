@@ -30,11 +30,11 @@ public class FrontControllerMovimiento {
         model.addAttribute("movimientoDinero", new MovimientoDinero());
         return "crearTransacciones";
     }
- 
+
     @PostMapping("/nuevoMovimiento")
     public String nuevo(@ModelAttribute MovimientoDinero movimientoDinero, Model model) throws Exception{
         controlador.addMovimiento(movimientoDinero);
         return "redirect:/movimientoDinero";
     }
-
+    
 }
