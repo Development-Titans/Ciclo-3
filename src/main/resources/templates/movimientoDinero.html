@@ -19,7 +19,7 @@
         </div>
         <div class="desplazamiento">
             <figure class="tamano margin">
-                <img src="img/Transacciones.jpg" width="120px" height="100px" alt="Transacciones">
+                <img src="img/SecretFly.png" width="120px" height="100px" alt="Transacciones">
             </figure>
             <h1 class="letras">Transacciones</h1>
         </div>
@@ -43,13 +43,27 @@
                     <th scope="row" th:text = "${movimientoPlata.fechaCreacion}"></th>
                 </tr>
             </tbody>
-            <tfoot>
+            <!--<tfoot>
                 <tr class="color">
                     <th class="colorletra" scope="col">Total $</th>
                     <th class="colorletra" scope="col" th:text = "${total}"></th>
                 </tr>
-            </tfoot>
-        </table>
+            </tfoot>-->
+        </table>   
+        <div class="label">
+            <div class="alinear">
+                <div>
+                    <h5>Total $</h5> 
+                </div>
+                <div>
+                    <h4 class="resultado" id="total" th:text = "${total}"></h4>   
+                </div>
+                
+            </div> 
+        </div>    
     </div>
+    
+    
+    
 </body>
 </html>

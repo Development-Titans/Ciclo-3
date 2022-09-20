@@ -22,7 +22,7 @@
     </div>
     <div class="desplazamiento">
         <figure class="tamano margin">
-            <img src="img/Transacciones.jpg" width="120px" height="100px" alt="Su navegador no soporta esta imagen">
+            <img src="img/SecretFly.png" width="120px" height="100px" alt="Su navegador no soporta esta imagen">
         </figure>
         <h1 class="letras">Gestión de Transacciones</h1>
     </div>
@@ -31,7 +31,7 @@
             <form action="#" th:action="@{/nuevoMovimiento}" th:object="${movimientoDinero}" method="post">
                 
                 
-                <h3 style="margin-bottom: 30px;" class="letras2">Nuevo Movimiento de Dinero</h1>
+                <h3 style="margin-bottom: 30px;" class="letras2">Nuevo Movimiento de Dinero</h3>
                     <div class="mb-3">
                         <label for="monto" class="form-label">Monto: $ </label>
                         <input type="number" class="form-control" id="monto" th:field="*{monto}" aria-describedby="emailHelp">
@@ -40,12 +40,12 @@
                     <div class="mb-3">
                         <label for="concepto" class="form-label">Concepto: </label>
                         <input type="text" class="form-control" id="concepto" th:field="*{concepto}">
-                        <div id="text" class="form-text">Ingresa el concepto de tu transacción</div>
+                        <div id="hola" class="form-text">Ingresa el concepto de tu transacción</div>
                     </div>
                     <div class="mb-3">
                         <label for="fechaCreacion" class="form-label">Fecha Creación: </label>
                         <input type="text" class="form-control" id="fechaCreacion" th:field="*{fechaCreacion}">
-                        <div id="text" class="form-text">Ingresa la Fecha (DD/MM/AAAA)</div>
+                        <div id="hello" class="form-text">Ingresa la Fecha (DD/MM/AAAA)</div>
                     </div>
                     <div class="mb-3">
                         <label for="fechaActualizacion" class="form-label">Fecha Actualización: </label>

@@ -32,14 +32,10 @@ public class MovimientoDinero {
 
     private String fechaActualizacion;
 
-    private float ingresos;
-
-    private float egresos;
-
     public MovimientoDinero() {
     }
 
-    public MovimientoDinero(Integer idMovimientoDinero, String concepto, float monto, float ingresos, float egresos, Empleado usuario, Empresa empresa, String fechaCreacion, String fechaActualizacion) {
+    public MovimientoDinero(Integer idMovimientoDinero, String concepto, float monto, Empleado usuario, Empresa empresa, String fechaCreacion, String fechaActualizacion) {
         this.idMovimientoDinero = idMovimientoDinero;
         this.concepto = concepto;
         this.monto = monto;
@@ -47,8 +43,6 @@ public class MovimientoDinero {
         this.empresa = empresa;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
-        this.egresos = egresos;
-        this.ingresos = ingresos;
     }
 
     public Integer getId() {
@@ -107,21 +101,6 @@ public class MovimientoDinero {
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public float getIngresos() {
-        return ingresos;
-    }
-
-    public void setIngresos(float ingresos) {
-        this.ingresos = ingresos;
-    }
-
-    public float getEgresos() {
-        return egresos;
-    }
-
-    public void setEgresos(float egresos) {
-        this.egresos = egresos;
-    }
 
     
 }
