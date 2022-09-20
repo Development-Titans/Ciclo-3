@@ -34,7 +34,7 @@ public class FrontControllerEmpresa {
     @GetMapping("/crearEmpresa")
     public String crearEmpresa(@ModelAttribute Empresa empresa, Model model) {
         model.addAttribute("empresa", new Empresa());
-        return "crearEmpresa";
+        return "creacionEmpresa";
     }
 
     @PostMapping("/crearEmpresa")
