@@ -89,22 +89,6 @@
 .letras2{
     text-align: center;
 }
-
-.imagen{
-    background-image: url(/Images/Login.jpg);
-    background-size: cover;
-    width: 1536px;
-    height: 745px;
-    background-repeat: no-repeat
-}
-
-.login{
-    background-color: rgba(236, 249, 59, 0.727);
-    width: 400px;
-    height: 500px;
-    margin-top: 100px;
-}
-
 .boton{
     margin-bottom: 1rem;
 }
@@ -120,4 +104,52 @@ h1 {
     height: 65px;
     padding-left: 5px;
     padding-top: 2px;
+}
+
+
+.centrar2{
+    display: flex;
+    justify-content: center;
+}
+
+.fondo{
+    background-color: gold;
+}
+
+.imagen2{
+    background-image: url(/img/Login.jpg);
+    background-size: cover;
+    width: 1525px;
+    height: 710px;
+    background-repeat: no-repeat
+}
+
+.login{
+    background-color: rgba(138, 136, 245, 0.816);
+    width: 400px;
+    height: 600px;
+    margin-top: 80px;
+}
+
+.user{
+    width: 120px;   
+    height: 120px;
+    margin-top: 7px;
+}
+
+.titulo{
+    margin-top: 5%;
+    color: azure;
+}
+
+.marginForm{
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.labels{
+    text-size-adjust: 10%;
+    margin-top: 1%;
+    color: rgb(225, 234, 234);
 }
