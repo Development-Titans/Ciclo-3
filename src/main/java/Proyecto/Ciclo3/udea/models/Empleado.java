@@ -7,20 +7,19 @@ import java.util.List;
 @Entity
 @Table(name = "empleado")
 public class Empleado {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_empleado") // Cambiando nombre de la columna por buenas practicas
-    private Integer idEmpleado;
+    
     private String nombre;
+    @Id
     private String correo;
     private String telefono;
+    private String contrasena;
     @OneToOne
     @JsonIgnore
     @JoinColumn(name = "id_perfil", insertable = false, updatable = false)
     private Perfil perfil;
     @Enumerated(EnumType.STRING)
-    @ElementCollection(targetClass = Enum_NombreRol.class)
-    private List<Enum_NombreRol> rol;
+    @ElementCollection(targetClass = Roles.class, fetch = FetchType.EAGER)
+    private List<Roles> rol;
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "id_empresa", insertable = false, updatable = false) /* Esto se hace porque NO vamos a crear
@@ -38,7 +37,7 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(Integer idEmpleado, String nombre, String correo, String telefono, Perfil perfil, List<Enum_NombreRol> rol, Empresa empresa, List<MovimientoDinero> transaccion, LocalDate fechaCreacion, LocalDate fechaActualizacion) {
+    public Empleado(Integer idEmpleado, String contrasena, String nombre, String correo, String telefono, Perfil perfil, List<Roles> rol, Empresa empresa, List<MovimientoDinero> transaccion, LocalDate fechaCreacion, LocalDate fechaActualizacion) {
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.correo = correo;
@@ -49,6 +48,7 @@ public class Empleado {
         this.transaccion = transaccion;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
+        this.contrasena = contrasena;
     }
 
     public Integer getIdEmpleado() {
@@ -89,11 +89,11 @@ public class Empleado {
         this.perfil = perfil;
     }
 
-    public List<Enum_NombreRol> getRol() {
+    public List<Roles> getRol() {
         return rol;
     }
 
-    public void setRol(List<Enum_NombreRol> rol) {
+    public void setRol(List<Roles> rol) {
         this.rol = rol;
     }
 
@@ -128,4 +128,14 @@ public class Empleado {
     public void setFechaActualizacion(LocalDate fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    
 }

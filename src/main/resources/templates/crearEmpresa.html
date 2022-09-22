@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,43 +11,44 @@
 </head>
 
 <body>
-    <div>
-        <nav class="nav nav-pills nav-justified">
-            <a class="nav-link active" aria-current="page" th:href="@{/empresa}">Empresas</a>
-            <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
-            <a class="nav-link" th:href="@{/movimientoDinero}">Transacciones</a>
-        </nav>
-    </div>
-    <div class="desplazamiento">
-        <figure class="tamano margin">
-            <img src="img/SecretFly.png" width="120px" height="100px" alt="Su navegador no soporta esta imagen">
-        </figure>
-        <h1 class="letras">Gestion de Empresas</h1>
-    </div>
-    <div class="centrar">
-        <div class="contenedorcrearem">
-            <form action="#" th:action="@{/crearEmpresa}" th:object="${empresa}" method="post">
+    <div sec:authorize="isAuthenticated()"> <!--Linea para que la pagina exija autenticacion antes de iniciar-->
+        <div>
+            <nav class="nav nav-pills nav-justified">
+                <a class="nav-link active" aria-current="page" th:href="@{/empresa}">Empresas</a>
+                <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
+                <a class="nav-link" th:href="@{/movimientoDinero}">Transacciones</a>
+            </nav>
+        </div>
+        <div class="desplazamiento">
+            <figure class="tamano margin">
+                <img src="img/SecretFly.png" width="120px" height="100px" alt="Su navegador no soporta esta imagen">
+            </figure>
+            <h1 class="letras">Gestion de Empresas</h1>
+        </div>
+        <div class="centrar">
+            <div class="contenedorcrearem">
+                <form action="#" th:action="@{/crearEmpresa}" th:object="${empresa}" method="post">
 
-                <h3 style="margin-bottom: 30px;" class="letras2">Nueva Empresa</h3>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
-                    <div id="hola" class="form-text">Ingresa el nombre de la empresa.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="direccion" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" th:field="*{direccion}">
-                    <div id="hello" class="form-text">Ingresa la dirección</div>
-                </div>
-                <div class="mb-3">
-                    <label for="telefono" class="form-label">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" th:field="*{telefono}" aria-describedby="emailHelp">
-                    <div id="bien" class="form-text">Ingresa el teléfono</div>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
+                    <h3 style="margin-bottom: 30px;" class="letras2">Nueva Empresa</h3>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
+                        <div id="hola" class="form-text">Ingresa el nombre de la empresa.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" th:field="*{direccion}">
+                        <div id="hello" class="form-text">Ingresa la dirección</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" th:field="*{telefono}" aria-describedby="emailHelp">
+                        <div id="bien" class="form-text">Ingresa el teléfono</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
         </div>
     </div>
-
 </body>
 </html>

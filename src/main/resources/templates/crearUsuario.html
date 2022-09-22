@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <title>CrearUsuario</title>
@@ -9,48 +9,50 @@
 </head>
 
 <body>
-    <div>
-        <nav class="nav nav-pills nav-justified">
-            <a class="nav-link" th:href="@{/empresa}">Empresas</a>
-            <a class="nav-link active" aria-current="page" th:href="@{/usuarios}">Usuarios</a>
-            <a class="nav-link" th:href="@{/movimientoDinero}">Transacciones</a>
-        </nav>
-    </div>
-    <div class="desplazamiento">
-        <figure class="tamano margin">
-            <img src="img/SecretFly.png" width="120px" height="100px" alt="Su navegador no soporta esta imagen">
-        </figure>
-        <h1 class="letras">Gestion de Usuarios</h1>
-    </div>
-    <div class="centrar">
-        
-        <div class="contenedorcrearem">
-            <h3 style="margin-bottom: 30px;" class="letras2">Nuevo Usuario</h1>
-            <form action="#" th:action="@{/crearusuario}" th:object="${raichu}" method="post">
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
-                    <div id="muestra" class="form-text">Ingrese el nombre del nuevo Usuario.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="correo" class="form-label">Correo:</label>
-                    <input type="email" class="form-control" id="correo" th:field="*{correo}">
-                    <div id="muestra" class="form-text">Ejemplo prueba@gmail.com.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="telefono" class="form-label">Telefono:</label>
-                    <input type="text" class="form-control" id="telefono" th:field="*{telefono}">
-                    <div id="muestra" class="form-text">Ejemplo prueba@gmail.com.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="rol" class="form-label">Rol</label>
-                    <select type="Rol" id="rol" class="form-select boton" aria-label="Default select example">
-                        <option selected>Ingrese una opción</option>
-                        <option type="Rol" th:field="*{rol}" value="Administrador">Administrador</option>
-                        <option type="text" value="2">Operador</option>
-                    </select>
-                <button type="submit" class="btn btn-primary">Crear</button>
-            </form>
+    <div sec:authorize="isAuthenticated()"> <!--Linea para que la pagina exija autenticacion antes de iniciar-->
+        <div>
+            <nav class="nav nav-pills nav-justified">
+                <a class="nav-link" th:href="@{/empresa}">Empresas</a>
+                <a class="nav-link active" aria-current="page" th:href="@{/usuarios}">Usuarios</a>
+                <a class="nav-link" th:href="@{/movimientoDinero}">Transacciones</a>
+            </nav>
+        </div>
+        <div class="desplazamiento">
+            <figure class="tamano margin">
+                <img src="img/SecretFly.png" width="120px" height="100px" alt="Su navegador no soporta esta imagen">
+            </figure>
+            <h1 class="letras">Gestion de Usuarios</h1>
+        </div>
+        <div class="centrar">
+            
+            <div class="contenedorcrearem">
+                <h3 style="margin-bottom: 30px;" class="letras2">Nuevo Usuario</h1>
+                <form action="#" th:action="@{/crearusuario}" th:object="${raichu}" method="post">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
+                        <div id="muestra" class="form-text">Ingrese el nombre del nuevo Usuario.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo:</label>
+                        <input type="email" class="form-control" id="correo" th:field="*{correo}">
+                        <div id="muestra" class="form-text">Ejemplo prueba@gmail.com.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Telefono:</label>
+                        <input type="text" class="form-control" id="telefono" th:field="*{telefono}">
+                        <div id="muestra" class="form-text">Ejemplo prueba@gmail.com.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rol" class="form-label">Rol</label>
+                        <select type="Rol" id="rol" class="form-select boton" aria-label="Default select example">
+                            <option selected>Ingrese una opción</option>
+                            <option type="Rol" th:field="*{rol}" value="Administrador">Administrador</option>
+                            <option type="text" value="2">Operador</option>
+                        </select>
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>

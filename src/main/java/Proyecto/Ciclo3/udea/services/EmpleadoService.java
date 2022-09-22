@@ -25,8 +25,8 @@ public class EmpleadoService implements EmpleadoInterface {
     // BUSCAR POR ID
 
     @Override
-    public Empleado empleadoGetId(Integer id) throws Exception{
-        Optional<Empleado> s = repoEmpleado.findById(id);
+    public Empleado empleadoGetId(String correo) throws Exception{
+        Optional<Empleado> s = repoEmpleado.findById(correo);
         if (s.isPresent()){ /* Si hay datos en la variable entonces: */
             return s.get(); /* Devuelve lo que tiene dentro la variable para verla en controladores*/
         }

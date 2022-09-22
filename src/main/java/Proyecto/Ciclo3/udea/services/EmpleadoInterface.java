@@ -8,7 +8,7 @@ public interface EmpleadoInterface {
 
     public List<Empleado> empleadoGetAll();
 
-    public Empleado empleadoGetId(Integer id) throws Exception;
+    public Empleado empleadoGetId(String correo) throws Exception;
 
     public String addEmpleado (Empleado empresaRegistro) throws Exception;
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <meta charset="UTF-8">
@@ -12,51 +12,52 @@
 </head>
 
 <body>
-    <div>
-        <nav class="nav nav-pills nav-justified">
+    <div sec:authorize="isAuthenticated()"> <!--Linea para que la pagina exija autenticacion antes de iniciar-->
+        <div>
+            <nav class="nav nav-pills nav-justified">
 
-            <a class="nav-link" th:href="@{/empresa}">Empresas</a>
-            <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
-            <a class="nav-link active" aria-current="page" th:href="@{/movimientoDinero}">Transacciones</a>
-        </nav>
-    </div>
-    <div class="desplazamiento">
-        <figure class="tamano margin">
-            <img src="img/SecretFly.png" width="120px" height="100px" alt="Su navegador no soporta esta imagen">
-        </figure>
-        <h1 class="letras">Gestión de Transacciones</h1>
-    </div>
-    <div class="centrar">
-        <div class="contenedorcrearem">
-            <form action="#" th:action="@{/nuevoMovimiento}" th:object="${movimientoDinero}" method="post">
-                
-                
-                <h3 style="margin-bottom: 30px;" class="letras2">Nuevo Movimiento de Dinero</h3>
-                    <div class="mb-3">
-                        <label for="monto" class="form-label">Monto: $ </label>
-                        <input type="number" class="form-control" id="monto" th:field="*{monto}" aria-describedby="emailHelp">
-                        <div id="integer" class="form-text">Ingresa el valor de la transacción</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="concepto" class="form-label">Concepto: </label>
-                        <input type="text" class="form-control" id="concepto" th:field="*{concepto}">
-                        <div id="hola" class="form-text">Ingresa el concepto de tu transacción</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="fechaCreacion" class="form-label">Fecha Creación: </label>
-                        <input type="text" class="form-control" id="fechaCreacion" th:field="*{fechaCreacion}">
-                        <div id="hello" class="form-text">Ingresa la Fecha (DD/MM/AAAA)</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="fechaActualizacion" class="form-label">Fecha Actualización: </label>
-                        <input type="text" class="form-control" id="fechaActualizacion" th:field="*{fechaActualizacion}">
-                        <div id="text" class="form-text">Ingresa la Fecha (DD/MM/AAAA)</div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Ingresar</button>
-            </form>
+                <a class="nav-link" th:href="@{/empresa}">Empresas</a>
+                <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
+                <a class="nav-link active" aria-current="page" th:href="@{/movimientoDinero}">Transacciones</a>
+            </nav>
+        </div>
+        <div class="desplazamiento">
+            <figure class="tamano margin">
+                <img src="img/SecretFly.png" width="120px" height="100px" alt="Su navegador no soporta esta imagen">
+            </figure>
+            <h1 class="letras">Gestión de Transacciones</h1>
+        </div>
+        <div class="centrar">
+            <div class="contenedorcrearem">
+                <form action="#" th:action="@{/nuevoMovimiento}" th:object="${movimientoDinero}" method="post">
+                    
+                    
+                    <h3 style="margin-bottom: 30px;" class="letras2">Nuevo Movimiento de Dinero</h3>
+                        <div class="mb-3">
+                            <label for="monto" class="form-label">Monto: $ </label>
+                            <input type="number" class="form-control" id="monto" th:field="*{monto}" aria-describedby="emailHelp">
+                            <div id="integer" class="form-text">Ingresa el valor de la transacción</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="concepto" class="form-label">Concepto: </label>
+                            <input type="text" class="form-control" id="concepto" th:field="*{concepto}">
+                            <div id="hola" class="form-text">Ingresa el concepto de tu transacción</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaCreacion" class="form-label">Fecha Creación: </label>
+                            <input type="text" class="form-control" id="fechaCreacion" th:field="*{fechaCreacion}">
+                            <div id="hello" class="form-text">Ingresa la Fecha (DD/MM/AAAA)</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaActualizacion" class="form-label">Fecha Actualización: </label>
+                            <input type="text" class="form-control" id="fechaActualizacion" th:field="*{fechaActualizacion}">
+                            <div id="text" class="form-text">Ingresa la Fecha (DD/MM/AAAA)</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                </form>
+            </div>
         </div>
     </div>
-
 </body>
 
 </html>

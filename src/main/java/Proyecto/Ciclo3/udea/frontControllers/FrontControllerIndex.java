@@ -1,6 +1,9 @@
 package Proyecto.Ciclo3.udea.frontControllers;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import Proyecto.Ciclo3.udea.models.Empleado;
 
 @Controller
 public class FrontControllerIndex {
@@ -10,9 +13,17 @@ public class FrontControllerIndex {
     public String index(){
         return "index";
     }
+    
+    @GetMapping("/")
+    public String getIndex(){
+        return "index";
+    }
 
     @GetMapping("/login")
-    public String login(){
+    public String getLogin(Model model){
+        model.addAttribute("formEmpleado",new Empleado());
         return "login";
     }
+
+    
 }
