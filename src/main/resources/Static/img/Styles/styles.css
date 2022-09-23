@@ -3,7 +3,7 @@
     margin: 0 auto 0 auto
 }
 
-.margen{
+.margen2{
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
     margin-top: -57px;
@@ -214,4 +214,12 @@ h1 {
     margin: 0 auto 0 auto;
     display: grid;
     justify-content: center;
+}
+
+.margen{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    margin-top: 160px;
+    display: flex;
+    justify-content: space-around;
 }
