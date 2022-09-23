@@ -11,7 +11,7 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="fondo">
     <div sec:authorize="isAuthenticated()"> <!--Linea para que la pagina exija autenticacion antes de iniciar-->
         <div>
             <nav class="nav nav-pills nav-justified">
@@ -23,11 +23,15 @@
         </div>
         <div class="desplazamiento">
             <figure class="tamano margin">
-                <img src="img/SecretFly.png" width="120px" height="100px" alt="Su navegador no soporta esta imagen">
+                <img src="img/LogoFly.png" width="180px" height="140px" alt="Su navegador no soporta esta imagen">
             </figure>
-            <h1 class="letras">Gestión de Transacciones</h1>
+            <div class="marginNav">
+                <div>
+                    <h1 class="letras cuadroLetra">Transacciones</h1>
+                </div>
+            </div>
         </div>
-        <div class="centrar">
+        <div class="centrar3">
             <div class="contenedorcrearem">
                 <form action="#" th:action="@{/nuevoMovimiento}" th:object="${movimientoDinero}" method="post">
                     

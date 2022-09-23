@@ -12,8 +12,8 @@ public interface EmpleadoInterface {
 
     public String addEmpleado (Empleado empresaRegistro) throws Exception;
 
-    public String updateEmpleado (Empleado emp, Integer id) throws Exception;
+    public String updateEmpleado (Empleado emp, String correo) throws Exception;
 
-    public String borrarEmpleado (Integer id) throws Exception;
+    public String borrarEmpleado (String correo) throws Exception;
 
 }

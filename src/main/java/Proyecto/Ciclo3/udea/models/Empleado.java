@@ -7,7 +7,6 @@ import java.util.List;
 @Entity
 @Table(name = "empleado")
 public class Empleado {
-    
     private String nombre;
     @Id
     private String correo;
@@ -37,8 +36,7 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(Integer idEmpleado, String contrasena, String nombre, String correo, String telefono, Perfil perfil, List<Roles> rol, Empresa empresa, List<MovimientoDinero> transaccion, LocalDate fechaCreacion, LocalDate fechaActualizacion) {
-        this.idEmpleado = idEmpleado;
+    public Empleado(String contrasena, String nombre, String correo, String telefono, Perfil perfil, List<Roles> rol, Empresa empresa, List<MovimientoDinero> transaccion, LocalDate fechaCreacion, LocalDate fechaActualizacion) {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
@@ -49,14 +47,6 @@ public class Empleado {
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
         this.contrasena = contrasena;
-    }
-
-    public Integer getIdEmpleado() {
-        return idEmpleado;
-    }
-
-    public void setIdEmpleado(Integer idEmpleado) {
-        this.idEmpleado = idEmpleado;
     }
 
     public String getNombre() {

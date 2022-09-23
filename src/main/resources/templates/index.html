@@ -6,16 +6,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/img/Styles/styles.css}">
 </head>
-<body class="fondoIndex">
+<body class="fondoTarjetas">
     <div class="contenedor">
         <div sec:authorize="isAuthenticated()"> <!--Linea para que la pagina exija autenticacion antes de iniciar-->
             <div class="margen mediano">
                 <div class="card" style="width: 18rem;">
-                    <img src="img/Empresas.jpg" class="card-img-top" alt="Su navegador no soporta esta imagen">
+                    <img src="img/Empresas.jpg" height="205 px" class="card-img-top" alt="Su navegador no soporta esta imagen">
                     <div class="card-body tarjetas">
-                        <h5 class="card-title ">EMPRESAS</h5>
+                        <h5 class="card-title">EMPRESAS</h5>
                         <p class="card-text">Ingresa para gestionar cada una de tus empresas y ver los datos.</p>
-                        <a th:href="@{/empresa}" class="btn btn-light">Ir a Empresas</a>
+                        <a th:href="@{/empresa}" class="btn btn-primary">Ir a Empresas</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -23,7 +23,7 @@
                     <div class="card-body tarjetas">
                         <h5 class="card-title">USUARIOS</h5>
                         <p class="card-text">Ingresa para gestionar cada una de tus usuarios y ver los datos.</p>
-                        <a th:href="@{/usuarios}" class="btn btn-light">Ir a Usuarios</a>
+                        <a th:href="@{/usuarios}" class="btn btn-primary">Ir a Usuarios</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -31,7 +31,7 @@
                     <div class="card-body tarjetas">
                         <h5 class="card-title ">TRANSACCIONES</h5>
                         <p class="card-text">Ingresa para gestionar cada una de tus transacciones y ver los datos.</p>
-                        <a th:href="@{/movimientoDinero}" class="btn btn-light">Ir a Transacciones</a>
+                        <a th:href="@{/movimientoDinero}" class="btn btn-primary">Ir a Transacciones</a>
                     </div>
                 </div>
             </div>

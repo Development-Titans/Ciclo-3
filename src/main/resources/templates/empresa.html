@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/img/Styles/styles.css}">
 </head>
-<body>
+<body class="fondo">
     <div sec:authorize="isAuthenticated()"> <!--Linea para que la pagina exija autenticacion antes de iniciar-->
         <div>
             <nav class="nav nav-pills nav-justified">
@@ -21,12 +21,18 @@
             </div>
             <div class="desplazamiento">
                 <figure class="tamano margin">
-                    <img src="img/SecretFly.png" width="120px" height="100px" alt="Su navegador no soporta esta imagen">
+                    <img src="img/LogoFly.png" width="180px" height="140px" alt="Su navegador no soporta esta imagen">
                 </figure>
-                <h1 class="letras">Gestion de Empresas</h1>
+                <div class="marginNav">
+                    <div>
+                        <h1 class="letras cuadroLetra">Gestion de Empresas</h1>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="margentabla">
+        <div class="centrar2 marginGestion">
+            <div class="recuadroForm">
+                <div>
             <a th:href="@{/crearEmpresa}" class="btn btn-primary boton">Nuevo</a>
             <table class="table border">
                 <thead>
@@ -47,5 +53,7 @@
             </table>
         </div>
     </div>
+</div>
+</div>
 </body>
 </html>

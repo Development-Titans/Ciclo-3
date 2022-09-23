@@ -39,7 +39,7 @@ public class EmpleadoService implements EmpleadoInterface {
     @Override
     public String addEmpleado(Empleado empleadoRegistro) throws Exception{
         try {/* Se valida que el id no exista*/
-            empleadoGetId(empleadoRegistro.getIdEmpleado());/* Si encuentra el id pasa a la linea 44*/
+            empleadoGetId(empleadoRegistro.getCorreo());/* Si encuentra el id pasa a la linea 44*/
         }catch (Exception e){
             repoEmpleado.save(empleadoRegistro); /* Sino encuentra el id, se ingresan los datos*/
             return "Se agrego el empleado exitosamente";
@@ -50,10 +50,10 @@ public class EmpleadoService implements EmpleadoInterface {
     // ACTUALIZAR EMPLEADO
 
     @Override
-    public String updateEmpleado(Empleado emp, Integer id) throws Exception{ /* Recibimos los parametros del controlador */
+    public String updateEmpleado(Empleado emp, String correo) throws Exception{ /* Recibimos los parametros del controlador */
         try {
-            Empleado g = empleadoGetId(id);
-            g.setIdEmpleado(id); // Se modifica id
+            Empleado g = empleadoGetId(correo);
+            g.setCorreo(correo); // Se modifica id
             g.setNombre(emp.getNombre());
             g.setCorreo(emp.getCorreo());
             g.setPerfil(emp.getPerfil());
@@ -70,9 +70,9 @@ public class EmpleadoService implements EmpleadoInterface {
     // BORRAR DATOS
 
     @Override
-    public String borrarEmpleado(Integer id) throws Exception{
+    public String borrarEmpleado(String correo) throws Exception{
         try {
-            repoEmpleado.deleteById(id); // Si encuentra el id entonces borra el empleado
+            repoEmpleado.deleteById(correo); // Si encuentra el id entonces borra el empleado
             return "El empleado se elimino con exito";
         }catch (Exception e){
             throw new Exception("El id del empleado que quiere eliminar no se encuentra");
