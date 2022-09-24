@@ -32,8 +32,8 @@
                 <h3 style="margin-bottom: 30px;" class="letras2">Nuevo Usuario</h1>
                 <form action="#" th:action="@{/actualizarUsuario}" th:object="${actualizarUser}" method="post">
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" class="form-control" th:value="*{nombre}" id="nombre" th:field="*{nombre}">
+                        <label for="nombre-hola" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" th:value="*{nombre}" id="nombre-hola" th:field="*{nombre}">
                         <div id="muestra" class="form-text">Ingrese el nombre del nuevo Usuario.</div>
                     </div>
                     <div class="mb-3">
