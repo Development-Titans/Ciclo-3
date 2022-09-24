@@ -14,12 +14,8 @@ public class FrontControllerIndex {
         return "index";
     }
     
-    @GetMapping("/")
-    public String getIndex(){
-        return "login";
-    }
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String getLogin(Model model){
         model.addAttribute("formEmpleado",new Empleado());
         return "login";
