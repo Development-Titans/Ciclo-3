@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>CrearUsuario</title>
+    <link rel="stylesheet" th:href="@{/img/Styles/styles.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body class="fondo">
+    <div sec:authorize="isAuthenticated()"> <!--Linea para que la pagina exija autenticacion antes de iniciar-->
+        <div>
+            <nav class="nav nav-pills nav-justified">
+                <a class="nav-link" th:href="@{/empresa}">Empresas</a>
+                <a class="nav-link active" aria-current="page" th:href="@{/usuarios}">Usuarios</a>
+                <a class="nav-link" th:href="@{/movimientoDinero}">Transacciones</a>
+            </nav>
+        </div>
+        <div class="desplazamiento">
+            <figure class="tamano margin">
+                <img src="img/LogoFly.png" width="180px" height="140px" alt="Su navegador no soporta esta imagen">
+            </figure>
+            <div class="marginNav">
+                <div>
+                    <h1 class="letras cuadroLetra">Gestion de Usuarios</h1>
+                </div>
+            </div>
+        </div>
+        <div class="centrar3">
+            <div class="contenedorcrearem">
+                <h3 style="margin-bottom: 30px;" class="letras2">Nuevo Usuario</h1>
+                <form action="#" th:action="@{/crearusuario}" th:object="${raichu}" method="post">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
+                        <div id="muestra" class="form-text">Ingrese el nombre del nuevo Usuario.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo:</label>
+                        <input type="email" class="form-control" id="correo" th:field="*{correo}">
+                        <div id="muestra" class="form-text">Ejemplo prueba@gmail.com.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Telefono:</label>
+                        <input type="text" class="form-control" id="telefono" th:field="*{telefono}">
+                        <div id="muestra" class="form-text">Ejemplo prueba@gmail.com.</div>
+                    </div>
+                    <div class="form-check" th:each="rol : ${rolecillos}">
+                        <input th:field="*{rol}" class="form-check-input" th:text="${rol.name}" type="checkbox" th:value="${rol.name}" id="flexCheckChecked">
+                    </div>
+                    <button type="submit" class="btn btn-primary espacioBoton">Crear</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
