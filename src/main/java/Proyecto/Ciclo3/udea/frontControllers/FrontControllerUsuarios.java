@@ -59,7 +59,7 @@ public class FrontControllerUsuarios {
     }
 
     /* Esta Mostrando la plantilla de actualizar un usuario */
-
+/*
     @PostMapping("/actualizarUsuario")
     public String actualizar(Model model){
         return "actualizarUsuario";
@@ -70,10 +70,10 @@ public class FrontControllerUsuarios {
         try {
             model.addAttribute("actualizarUser", controllersUsuarios.empleadoGetId(id)); /* Estamos buscando y almacenando el objeto
             en actualizarUser, esto nos trae todos los datos de ese usuario */
-            model.addAttribute("rolecillos", Roles.values()); /* Traemos los roles que vamos a mostrar para actualizar */
-            return "actualizarUsuario"; /* Los enviamos a la plantilla de actualizarUsuario */
-        } catch (Exception e) {
+            /*model.addAttribute("rolecillos", Roles.values()); /* Traemos los roles que vamos a mostrar para actualizar */
+            /*return "actualizarUsuario"; /* Los enviamos a la plantilla de actualizarUsuario */
+        /*} catch (Exception e) {
             return "redirect:/error";
         }
-    }
+    }*/
 }
