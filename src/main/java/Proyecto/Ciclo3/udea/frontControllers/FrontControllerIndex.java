@@ -16,7 +16,7 @@ public class FrontControllerIndex {
     
     @GetMapping("/")
     public String getIndex(){
-        return "index";
+        return "login";
     }
 
     @GetMapping("/login")
