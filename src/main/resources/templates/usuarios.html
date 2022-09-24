@@ -39,6 +39,8 @@
                                 <th class="colorletra" scope="col">Nombre</th>
                                 <th class="colorletra" scope="col">Correo</th>
                                 <th class="colorletra" scope="col">Teléfono</th>
+                                <th class="colorletra" scope="col">Eliminar</th>
+                                <th class="colorletra" scope="col">Editar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,6 +48,16 @@
                                 <th scope="row" th:text="${bleach.nombre}"></th>
                                 <th scope="row" th:text="${bleach.correo}"></th>
                                 <th scope="row" th:text="${bleach.telefono}"></th>
+                                <td>
+                                    <form th:action="@{/crearusuario/{id}(id=${bleach.correo})}" th:method="delete">
+                                        <button class="btn btn-outline-danger" type="submit">Eliminar</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form th:action="@{/usuarios/{id}(id=${bleach.correo})}" method="get">
+                                        <button class="btn btn-outline-warning" type="submit">Editar</button>
+                                    </form>
+                                </td>
                             </tr>
                         </tbody>
                         </table>

@@ -223,3 +223,12 @@ h1 {
     display: flex;
     justify-content: space-around;
 }
+
+.centrar4{
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.espacioBoton{
+    margin-top: 3%;
+}
