@@ -3,11 +3,6 @@
     margin: 0 auto 0 auto
 }
 
-.contenedor{
-    max-width: 120rem; /*toma 1200px como maximo y si esta disponible*/
-    margin: 0 auto 0 auto
-}
-
 .margen2{
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
