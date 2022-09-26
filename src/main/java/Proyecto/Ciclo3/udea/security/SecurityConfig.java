@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception{
 
-        String[] permitted = new String[]{"/**","/Static/img/**", "/Static/Styles/**"};
+        String[] permitted = new String[]{"/resources/**","/Static/img/**", "/Static/Styles/**"};
 
         http.authorizeRequests()
                 .antMatchers(permitted).permitAll()
