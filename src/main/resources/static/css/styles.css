@@ -1,0 +1,239 @@
+.contenedor{
+    max-width: 120rem; /*toma 1200px como maximo y si esta disponible*/
+    margin: 0 auto 0 auto
+}
+
+.contenedor{
+    max-width: 120rem; /*toma 1200px como maximo y si esta disponible*/
+    margin: 0 auto 0 auto
+}
+
+.margen2{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    margin-top: -57px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.margennav{
+    display: flex;
+    justify-content: center;
+}
+
+.cuadrito{
+    background-color: black;
+    margin-top: 25px;
+    display: flex;
+}
+
+.margentabla{
+    margin-left: 250px;
+    margin-right: 300px;
+    margin-top: 50px;
+}
+
+.color{
+    background-color: rgb(108, 108, 219);
+}
+
+.colorletra{
+    color: rgb(252, 252, 252);
+}
+
+.border{
+    border-color: rgb(24, 24, 23);
+}
+
+.doselementos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.fondo{
+    background-color: rgba(225, 218, 250, 0.244);
+}
+
+.letras{
+    align-items: center;
+    display: flex;
+    background-color: rgba(0, 255, 255, 0);
+    justify-content: center;
+    width: 400px;
+    height: 160px;
+    margin-left: 405px;
+    margin-bottom: 0px;
+}
+
+.desplazamiento{
+    display: grid;
+    grid-template-columns: 33.3% 33.3%;
+    align-items: center;
+    justify-items: center;
+    margin-right: 590px;
+    /*display: flex;
+    justify-content: start;*/
+}
+
+.margin{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.boton{
+    margin-bottom: 15px;
+}
+
+.contenedorcrearem{
+    background-color: #cab1fd68;
+    width: 600px;
+    height: 605px;
+    padding: 40px 40px 40px 40px;
+}
+
+.centrar{
+    display: flex;
+    justify-content: center;
+}
+
+.letras2{
+    text-align: center;
+}
+.boton{
+    margin-bottom: 1rem;
+}
+
+h1 {
+    text-align: center;
+    justify-content: center;
+}
+
+.label{
+    background-color: rgba(247, 209, 111, 0.473);
+    width: 20%;
+    height: auto;
+    padding-left: 2px;
+    padding-top: 1px;
+}
+
+
+.centrar2{
+    display: flex;
+    justify-content: center;
+}
+
+.imagen2{
+    background-image: url(/img/Login.jpg);
+    background-repeat: no-repeat
+}
+
+.login{
+    background-color: rgba(138, 136, 245, 0.816);
+    width: 400px;
+    height: 540px;
+    margin-top: 80px;
+}
+
+.user{
+    width: 120px;   
+    height: 120px;
+    margin-top: 7px;
+}
+
+.titulo{
+    margin-top: 5%;
+    color: azure;
+}
+
+.marginForm{
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.labels{
+    font-size: 12px;
+    margin-top: 1%;
+    color: rgb(225, 234, 234);
+}
+
+.botonLogin{
+    margin-top: 5%;
+}
+
+.desenfoque{
+    filter: blur(4px);
+}
+
+.tarjetas{
+    background-color: rgb(242, 242, 234);
+}
+
+.fondoTarjetas{
+    background-image: url(/img/FondoInicio.png);
+    background-repeat: no-repeat
+}
+
+.fondo{
+    background-image: url(/img/Fondo.png);
+    background-repeat: no-repeat
+}
+
+.recuadroForm{
+    background-color: #cab1fd68;
+    width: 800px;
+    height: auto;
+    border-radius: 6%;
+    padding: 2% 2% 2% 2%;
+}
+
+.marginGestion{
+    margin-top: 4%;
+}
+
+.cuadroLetra{
+    background-color: #FFCF54;
+    width: 60%;
+    height: 5%;
+    padding: 2px 2px 2px 2px;
+    border-radius: 4%;
+}
+
+.marginNav{
+    margin-top: 5%;
+}
+
+.centrar3{
+    margin-left: 30%;
+}
+
+.logo{
+    background-color: #fefefec3;
+    width: 190px;
+    height: 138px;
+    padding: 1px 1px 1px 1px;
+}
+
+.grid{
+    max-width: 120rem; /*toma 1200px como maximo y si esta disponible*/
+    margin: 0 auto 0 auto;
+    display: grid;
+    justify-content: center;
+}
+
+.margen{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    margin-top: 160px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.centrar4{
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.espacioBoton{
+    margin-top: 3%;
+}
