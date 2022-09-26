@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception{
 
-        String[] permitted = new String[]{"/img/**", "/Styles/**"};
+        String[] permitted = new String[]{"/**","/img/**", "/Styles/**"};
 
         http.authorizeRequests()
                 .antMatchers(permitted).permitAll()
@@ -77,9 +77,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     }
 
-    @Override
-    public void configure(final WebSecurity webSecurity) {
-        webSecurity.ignoring().antMatchers(
-                "/","/img/**", "/Styles/**");
-    }
 }
