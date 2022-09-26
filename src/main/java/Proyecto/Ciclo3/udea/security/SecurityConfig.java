@@ -43,12 +43,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception{
 
-        String[] permitted = new String[]{
-                "/Static/img/*", "/Static/Styles/*",
-                "/img/Styles/*"
-        };
+        String[] permitted = new String[]{"/img/*", "/Styles/*"};
 
-        http.authorizeRequests().antMatchers(permitted).permitAll()
+        http.authorizeRequests()
+                .antMatchers(permitted).permitAll()
             .antMatchers("/admin").hasRole("Administrador") /* Los usuarios que tengan el rol de admin son los que va a poder ingresar
             al path que esta en la linde 37 */
             .antMatchers("/user").hasAnyRole("Administrador", "Operario")
