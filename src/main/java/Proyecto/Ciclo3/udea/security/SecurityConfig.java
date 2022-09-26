@@ -80,9 +80,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     public void configure(final WebSecurity webSecurity) {
         webSecurity.ignoring().antMatchers(
-                "./src/main/resources/*",
-                "./src/main/resources/Static/img/*",
-                "./src/main/resources/Static/Styles/*",
-                "/img/Styles/*");
+                "/img/**", "/Styles/**");
     }
 }
